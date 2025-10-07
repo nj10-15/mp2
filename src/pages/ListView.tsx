@@ -45,7 +45,7 @@ export default function ListView() {
     (async () => {
       setLoading(true);
       try {
-        const res = await searchArtworks({ q: qDebounced || 'painting', page: page0, limit: 100 });
+        const res = await searchArtworks({ q: qDebounced || 'painting', page: page0, limit: 99 });
         // only keep items that have images so gallery/detail behavior matches
         setItems(res.data.filter(a => !!a.image_id));
       } catch {
@@ -87,8 +87,6 @@ export default function ListView() {
           }}
         />
       </div>
-
-      <p>Showing {sorted.length} result{sorted.length !== 1 ? 's' : ''}</p>
 
       {loading ? <p>Loading…</p> : (
         <div className="grid">
