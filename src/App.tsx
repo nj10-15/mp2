@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Link } from 'react-router-dom';
+import AppRoutes from './routes/AppRoutes';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <header className="appHeader">
+  <h1 className="appTitle">🎨 ArtVision: Explore the Art Institute Gallery</h1>
+  <nav>
+    <Link to="/search">Search</Link>
+    <Link to="/gallery">Gallery</Link>
+  </nav>
+</header>
+      <main>
+        <AppRoutes />
+      </main>
     </div>
   );
 }
-
-export default App;
